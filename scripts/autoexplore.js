@@ -78,7 +78,14 @@ Hooks.on("updateScene", (scene, changes) => {
 Hooks.on("renderSceneConfig", (app, element) => {
   const el = element instanceof HTMLElement ? element : element?.[0];
   const nav = el?.querySelector("nav.sheet-tabs");
-  if (!nav || nav.querySelector(`[data-tab="${MODULE_ID}"]`)) return;
+  if (!nav) return;
+
+  // This hook fires on EVERY re-render, and a re-render rebuilds some parts (the nav)
+  // while injected sibling panels survive — a presence-check on the nav item alone lets
+  // panels accumulate. Remove any of ours first, then inject fresh: idempotent no matter
+  // which parts the render replaced.
+  nav.querySelector(`[data-tab="${MODULE_ID}"]`)?.remove();
+  for (const stale of el.querySelectorAll(`.tab[data-tab="${MODULE_ID}"]`)) stale.remove();
 
   const active = app.tabGroups?.sheet === MODULE_ID;
 

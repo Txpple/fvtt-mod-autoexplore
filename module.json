@@ -2,7 +2,7 @@
   "id": "fvtt-mod-autoexplore",
   "title": "Autoexplore (Custom Scene Tab)",
   "description": "Adds a Custom tab to the scene configuration with a Start Explored toggle: the scene renders as fully explored for everyone — the map's architecture shows through the fog of war — while tokens and current activity still require line of sight. Purely client-side rendering: nothing is written to fog exploration data, so real exploration history is preserved and fog resets or new players can never break the effect.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Matthew Sippel"
@@ -17,7 +17,7 @@
   },
   "url": "https://github.com/Txpple/fvtt-mod-autoexplore",
   "manifest": "https://github.com/Txpple/fvtt-mod-autoexplore/releases/latest/download/module.json",
-  "download": "https://github.com/Txpple/fvtt-mod-autoexplore/releases/download/v1.0.0/fvtt-mod-autoexplore.zip",
+  "download": "https://github.com/Txpple/fvtt-mod-autoexplore/releases/download/v1.0.1/fvtt-mod-autoexplore.zip",
   "readme": "https://github.com/Txpple/fvtt-mod-autoexplore#readme",
   "license": "MIT"
 }
