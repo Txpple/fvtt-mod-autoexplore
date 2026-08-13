@@ -1,4 +1,4 @@
-# Autoexplore (Custom Scene Tab)
+# Autoexplore (Exploration Scene Tab)
 
 A tiny Foundry VTT module that lets a scene start **fully explored**: players see the whole
 map's architecture in the dim "explored" fog state from the moment they arrive, while tokens
@@ -7,7 +7,7 @@ taverns, shops — places whose floor plan is no secret, where pitch-black fog i
 
 ## Usage
 
-Open a scene's configuration and switch to the **Custom** tab (added by this module — core
+Open a scene's configuration and switch to the **Exploration** tab (added by this module — core
 tabs are left untouched). Tick **Start Explored**, save, done. Untick it to return to normal
 fog exploration.
 

@@ -69,7 +69,7 @@ Hooks.on("updateScene", (scene, changes) => {
 });
 
 // ---------------------------------------------------------------------------------------------
-// Scene configuration UI: a module-owned "Custom" tab (deliberately NOT injected into core's
+// Scene configuration UI: a module-owned "Exploration" tab (deliberately NOT injected into core's
 // tabs) holding the Start Explored checkbox. The input's name writes the flag through the
 // sheet's normal form submission; re-rendering re-injects, so active-tab state is restored from
 // the application's tabGroups.
@@ -94,7 +94,7 @@ Hooks.on("renderSceneConfig", (app, element) => {
   navItem.dataset.group = "sheet";
   navItem.dataset.tab = MODULE_ID;
   if (active) navItem.classList.add("active");
-  navItem.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" inert></i><span>Custom</span>`;
+  navItem.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" inert></i><span>Exploration</span>`;
   nav.appendChild(navItem);
 
   const panel = document.createElement("div");
