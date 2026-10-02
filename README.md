@@ -1,38 +1,45 @@
-# Autoexplore (Exploration Scene Tab)
+# Open Roll 5e: Autoexplore
 
-A tiny Foundry VTT module that lets a scene start **fully explored**: players see the whole
-map's architecture in the dim "explored" fog state from the moment they arrive, while tokens
-and anything happening on the map still require real line of sight. Perfect for town maps,
-taverns, shops — places whose floor plan is no secret, where pitch-black fog is just friction.
+A Foundry VTT module that lets a scene start fully explored. Players see the whole map in the dim
+explored state from the moment they arrive, while tokens and anything happening on the map still
+need real line of sight. It suits towns, taverns and shops: places whose floor plan is no secret,
+where pitch-black fog only gets in the way.
 
-## Usage
+## How it works
 
-Open a scene's configuration and switch to the **Exploration** tab (added by this module — core
-tabs are left untouched). Tick **Start Explored**, save, done. Untick it to return to normal
-fog exploration.
-
-## Why it's safe
-
-The effect is **purely client-side rendering**. The module fills each client's local fog
-texture after the scene loads and suppresses fog *saving* on flagged scenes, so:
-
-- **No fog data is ever written.** Each player's genuine exploration history is preserved
-  untouched underneath — turn the flag off and honest fog returns exactly as it was.
-- **Nothing can break it.** "Reset Fog", new players joining, re-imports — all irrelevant,
-  because there is no stored state to lose. The fill simply re-applies on every load/reset.
-- Explored-but-not-visible never draws tokens; that's core Foundry behavior the module
-  doesn't touch.
+- **One checkbox per scene.** The scene configuration gets an **Exploration** tab with a **Start
+  Explored** toggle. The core tabs are left as they are.
+- **The effect is drawn, not saved.** Each client fills its own fog texture when the scene loads,
+  and fog saving is switched off on flagged scenes. No fog exploration data is ever written.
+- **Real exploration is kept.** Each player's stored exploration stays untouched underneath. Turn
+  the toggle off and their own fog comes back as it was.
+- **Nothing can undo it by accident.** A GM's Reset Fog, a player joining for the first time or a
+  scene reload all re-apply the fill, because there is no stored state to lose.
+- **Tokens stay hidden.** An explored area that is out of sight never shows tokens; that is core
+  Foundry behaviour, and the module does not change it.
 
 ## Installation
 
-Install via manifest URL:
+Paste the manifest URL into Foundry's *Install Module* dialog:
 
 ```
 https://github.com/Txpple/fvtt-mod-autoexplore/releases/latest/download/module.json
 ```
 
-Compatibility: Foundry v13+ (verified on v14).
+Requires Foundry VTT v13 or v14 (verified on v14). It works with any game system and has no other
+dependencies.
+
+## Usage
+
+Open a scene's configuration, switch to the **Exploration** tab, tick **Start Explored** and save.
+The change applies at once for everyone viewing the scene. Untick it to return to normal fog of
+war; each client reloads its own stored exploration.
+
+While the toggle is on, fog is not saved on that scene, so anything a player explores there in the
+meantime is not added to their history. Exploration on every other scene is saved as usual.
+
+There are no module settings.
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
