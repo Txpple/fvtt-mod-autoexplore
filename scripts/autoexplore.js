@@ -94,7 +94,7 @@ Hooks.on("renderSceneConfig", (app, element) => {
   navItem.dataset.group = "sheet";
   navItem.dataset.tab = MODULE_ID;
   if (active) navItem.classList.add("active");
-  navItem.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" inert></i><span>Exploration</span>`;
+  navItem.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" inert></i> <span>Exploration</span>`;
   nav.appendChild(navItem);
 
   const panel = document.createElement("div");
